@@ -193,5 +193,8 @@ contract Cantoverse is ERC2981Cantoverse, ReentrancyGuard {
     }
 
     // Function to receive Canto. msg.data must be empty
-    // receive() external payable override {}
+    receive() external payable override {}
+
+    // Fallback function is called when msg.data is not empty
+    fallback() external payable override {}
 }
