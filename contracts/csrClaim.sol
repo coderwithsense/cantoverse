@@ -41,4 +41,6 @@ contract wallet {
     function withdrawClaimed() public {
         token.withdrawClaimed();
     }
+
+    receive() external payable { }
 }
