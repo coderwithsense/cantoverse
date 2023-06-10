@@ -9,10 +9,11 @@ interface csrCANTO {
 
 contract wallet {
     csrCANTO private token;
-    address private owner = 0x75c420b422b9A4cbB67F3895eF9b5B72d4884B78; 
+    address public owner; 
     address private tokenAddress;
 
     constructor(address _tokenAddress) {
+        owner = msg.sender;
         tokenAddress = _tokenAddress;
         token = csrCANTO(_tokenAddress);
     }
@@ -40,4 +41,6 @@ contract wallet {
     function withdrawClaimed() public {
         token.withdrawClaimed();
     }
+
+    receive() external payable { }
 }

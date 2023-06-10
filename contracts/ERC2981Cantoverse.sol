@@ -51,8 +51,8 @@ abstract contract ERC2981Cantoverse {
     }
 
     // Function to receive Canto. msg.data must be empty
-    receive() external payable {}
+    receive() external payable virtual {}
 
     // Fallback function is called when msg.data is not empty
-    fallback() external payable {}
+    fallback() external payable virtual {}
 }
